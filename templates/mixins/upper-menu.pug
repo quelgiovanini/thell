@@ -1,0 +1,4 @@
+﻿mixin upper-menu(section, links)
+	ul.nav.navbar-nav.navbar-right.responsive-nav.main-nav-list
+		each link in navLinks
+			li(class=(section == link.key ? 'current' : null)): a(href=link.href)= link.label

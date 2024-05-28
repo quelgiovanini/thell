@@ -1,0 +1,20 @@
+﻿mixin footer()
+	footer
+		.container
+			if data.footers && data.footers.length 
+				each footer in data.footers						
+					.col-md-3.company-details
+						.icon-top.red-text
+							i.icon-fontawesome-webfont-302
+						!=footer.city
+					.col-md-3.company-details
+						.icon-top.green-text
+							i.icon-fontawesome-webfont-329
+						!=footer.email
+					.col-md-3.company-details
+						.icon-top.blue-text
+							i.icon-fontawesome-webfont-101
+						!=formatter.conformToMask(footer.phone, "(11) 11111-1111", {guide: false}).output
+					.col-lg-3.col-sm-3.copyright
+						p Copyright &copy;#{new Date().getFullYear()} 
+						!= footer.company

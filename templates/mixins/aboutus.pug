@@ -1,0 +1,26 @@
+﻿mixin section_aboutus()
+	section#aboutus.about-us
+		.container
+			if data.ourCompanies && data.ourCompanies.length 
+				each company in data.ourCompanies			
+					.section-header
+						h2.white-text= company.title
+						br
+						h6.white-text
+					.row
+						.col-lg-4.col-md-4.column
+							.big-intro.wow.fadeInLeft.animated(data-wow-offset='30', data-wow-duration='1.5s', data-wow-delay='0.15s')
+								!=company.subtitle
+						.col-lg-4.col-md-4.column
+							p.wow.fadeInUp.animated(data-wow-offset='30', data-wow-duration='1.5s', data-wow-delay='0.15s')
+								h6
+									!=company.description
+						#portfolio-list
+							ul.cbp-rfgrid
+								li.wow.fadeInDown.animated(data-wow-offset='30', data-wow-duration='1.5s', data-wow-delay='0.15s')
+									a.inpage-scroll(href='#features')
+										img(src=company._.image.fit(750,450), alt='project').img-responsive
+										.project-info
+											.project-details
+												h5.white-text.red-border-bottom
+													| Soluções

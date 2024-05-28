@@ -1,0 +1,15 @@
+﻿extends ../layouts/default
+include ../mixins/cover
+include ../mixins/question
+include ../mixins/aboutus
+include ../mixins/features
+include ../mixins/contact
+
+block header-cover
+	+cover()
+
+block content
+	+question()
+	+section_aboutus()
+	+section_features()
+	+section_contact()

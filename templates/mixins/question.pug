@@ -1,0 +1,21 @@
+﻿mixin question()
+	section#focus.focus
+		.container
+			if data.coverTexts && data.coverTexts.length 
+				each ct in data.coverTexts
+					.section-header
+						h3
+							!=ct.subtitle
+					.row
+						if data.questions && data.questions.length 
+							+question-column(data.questions[0], 'red', 'fadeInLeft', 'pd-icon-money')
+							+question-column(data.questions[1], 'green', 'fadeInLeft', 'pd-icon-search')
+							+question-column(data.questions[2], 'blue', 'fadeInRight', 'pd-icon-ticket')
+							+question-column(data.questions[3], 'yellow', 'fadeInRight', 'pd-icon-check')
+
+mixin question-column(question, colour, effect, icon)
+	.col-lg-3.col-sm-3.focus-box.wow.animated(data-wow-offset='30', data-wow-duration='1.5s', data-wow-delay='0.15s', class=colour+' '+effect)
+		.service-icon
+			i.pixeden(class=icon)
+		p
+			!=question.description

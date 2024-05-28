@@ -1,0 +1,19 @@
+﻿include upper-menu
+
+mixin header(section, navLinks)
+	.preloader
+		.status  
+	header#home.header
+		#main-nav.navbar.navbar-inverse.bs-docs-nav(role='banner')
+			.container
+				.navbar-header.responsive-logo
+					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-navbar-collapse')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					.navbar-brand
+						img(src='images/logo.png', alt='Thell')
+				nav#bs-navbar-collapse.navbar-collapse.collapse(role='navigation')
+					+upper-menu(section, navLinks)
+		block header-cover

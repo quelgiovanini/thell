@@ -1,0 +1,27 @@
+﻿mixin section_contact()
+	section#contact.contact-us
+		.container
+			.section-header
+				h2.white-text Fale conosco
+				h6.white-text
+					| Em caso de dúvida, nos envie sua mensagem!
+			.row
+				form#contact-form.contact-form.frm-contact(role='form')
+					.wow.fadeInLeft.animated(data-wow-offset='30', data-wow-duration='1.5s', data-wow-delay='0.15s')
+						.inner-addon.right-addon.col-lg-4.col-sm-4
+							i.icon.icon-man-people-streamline-user
+							input#name.form-control.input-box.txt-name(type='text', name='name', placeholder='Nome', maxlength=50, required, data-msg='Informe seu nome')
+						.inner-addon.right-addon.col-lg-4.col-sm-4
+							i.icon.icon-email-mail-streamline
+							input#email.form-control.input-box.txt-email(type='email', name='email', placeholder='Email', maxlength=50, required, data-msg='Informe seu email')
+						.inner-addon.right-addon.col-lg-4.col-sm-4
+							i.icon.icon-iphone
+							input#subject.form-control.input-box.txt-phone(type='text', name='phone', placeholder='Telefone')
+					.inner-addon.right-addon.col-md-12.wow.fadeInRight.animated(data-wow-offset='30', data-wow-duration='1.5s', data-wow-delay='0.15s')
+						i.icon.icon-bubble-1-1
+						textarea#message.form-control.textarea-box.txt-message(name='message', placeholder='Mensagem', maxlength=1000, required, data-msg='Mensagem')
+					h4.success.pull-left.white-text
+						| Sua mensagem foi enviada com sucesso.
+					h4.error.pull-left.white-text
+						| O e-mail deve ser válido e a mensagem deve ter mais de 1 caracter.
+					button#submit.btn.btn-primary.custom-button.red-btn.wow.fadeInLeft.animated.btn-send(data-wow-offset='30', data-wow-duration='1.5s', data-wow-delay='0.15s') Enviar mensagem

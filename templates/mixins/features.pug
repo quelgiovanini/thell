@@ -1,0 +1,25 @@
+﻿mixin section_features()
+	section#features.features
+		.container
+			.section-header
+				if data.solutionIntros && data.solutionIntros.length 
+					each intro in data.solutionIntros			
+						h2.dark-text= intro.title
+						h6
+							!=intro.intro
+						br
+				.row
+					+section_feature_column(data.solutions, 0, 'fadeInLeft')
+					+section_feature_column(data.solutions, 1, 'fadeIn')
+					+section_feature_column(data.solutions, 2, 'fadeInRight')
+
+mixin section_feature_column(solutions, column, effect)
+	.col-md-4.col-sm-4.wow.animated(data-wow-offset='30', data-wow-duration='1.5s', data-wow-delay='0.15s', class=effect)
+		if solutions && solutions.length
+			each solution, i in solutions
+				if (i+3) % 3 == column
+					.feature
+						.feature-icon
+							i(class=solution.icon)
+						h5= solution.title
+						p= solution.description

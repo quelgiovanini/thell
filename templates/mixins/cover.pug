@@ -1,0 +1,5 @@
+﻿mixin cover()
+	.container
+		if data.coverTexts && data.coverTexts.length 
+			each ct in data.coverTexts
+				h1.intro= ct.title
